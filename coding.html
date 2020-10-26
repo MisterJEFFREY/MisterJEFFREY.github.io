@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>JC_PROTO_WEBSITE:From Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/small-business.css" rel="stylesheet">
+</head>
+
+<body style="background-color:#BFBFBF;">
+
+  <!-- Navigation -->
+  <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color:#215719">-->
+  <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color:#132F0F">
+    <div class="container">
+      <a class="navbar-brand" href="#">Jeffrey Cosio's Coding Portions</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="games.html">Games</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="coding.html">Coding</a>
+			<span class="sr-only">(current)</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bounties.html">Bounties</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="resume.html">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="coding_items\coding_pic_header_1.png" alt="">
+		<p class="text-center" style="font-size:6px">GUI credit to NotePad++ & W.Code started by David T.M.<p>
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        <h1 class="font-weight-light text-center">Coding Snippets and more!</h1>
+        <p class = "text-center">
+		Welcome to this page that contains code snippets and non-game projects that I've worked on!
+		</p>
+        <!-- <a class="btn btn-primary" href="#">Call to Action!</a> -->
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary my-5 py-1 text-center">
+      <div class="card-body">
+        <p class="text-white m-0">
+		Select a section to see more of a certain project and/or code snippet!
+		</p>
+      </div>
+    </div>
+
+	<!--Iframe to fit the menu selection of code snippets-->
+	<iframe id ="coding_iframe" src="coding_items\coding_menu.html" width ="100%" height = "50%" style="border:none;" onload= "reset_iframe();" ></iframe>
+	<!--END Iframe-->
+	
+	<!---->
+
+	<!---->
+	
+  </div>
+  <!-- /.container -->
+
+  <!---->
+  <!---->
+  <!---->
+  <!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer -->
+  <!-- footer class="py-5 bg-dark" style="background-color:#132F0F" > -->
+  <footer class="py-2" style="background-color:#132F0F" >
+    <div class="container text-center" style="background-color:#132F0F"> 
+      <p class="m-0 text-center text-white my-2" style="font-size:9px;">Special thanks to David T. Miller for helping me start up with this site.
+	  </p>
+      <p class="m-0 text-center text-white my-2" style="font-size:9px;">Along with those that visit this site.
+	  </p>
+	  <p class="m-0 text-center text-white my-2" style="font-size:9px;">Edits are done by the one and only, Jeffrey Cosio
+	  </p>
+	  <a href="#" class="btn text-center btn-success btn-sm">Head To Page Top</a>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!--Work around attempt #1 to prevent Chrome's inconsistent iframe content rendering.-->
+  <script type="text/javascript">
+	function reset_iframe() 
+		{
+			//https://www.geeksforgeeks.org/how-to-detect-the-user-browser-safari-chrome-ie-firefox-and-opera-using-javascript/
+			//Detect if using computer chrome!
+			// Get the user-agent string 
+			let userAgentString = navigator.userAgent;
+			// Detect Chrome 
+            let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+				//alert("User is using computer chrome: " + chromeAgent); //console.log("User is using computer chrome: " + chromeAgent);
+				//If user is really using Computer Chrome....
+				if (chromeAgent == true)
+					{
+						window.location.visibility = "hidden";
+						window.location.visibility = "visible";
+					}
+					 //break;
+		}
+  </script>
+  
+  <!--Test CORS messaging-->
+  <script>
+  //https://stackoverflow.com/questions/13042615/allowing-a-child-iframe-to-call-a-function-on-its-parent-window-from-a-different
+	window.addEventListener("message", function(event) {
+    console.log("Hello from " + event.data);
+	
+	var test_data = event.data
+	console.log(test_data);
+	if (test_data.includes("child frame"))
+		{
+			var test = document.getElementById('coding_iframe');
+			test.scrollIntoView();
+		}
+	});
+  </script>
+  
+  
+</body>
+
+</html>

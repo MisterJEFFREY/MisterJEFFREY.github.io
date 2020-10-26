@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>website_code_snippet_1</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!--From W3 schools to help with slideshow-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<!-- Custom styles for this template -->
+	<link href="../../css/small-business.css" rel="stylesheet">
+
+  
+</head>
+	<!--Work around attempt #5 to prevent Chrome's inconsistent iframe content rendering.-->
+	<script>
+		function test_hidden_fix()
+		{
+			//https://www.geeksforgeeks.org/how-to-detect-the-user-browser-safari-chrome-ie-firefox-and-opera-using-javascript/
+			//Detect if using computer chrome!
+			// Get the user-agent string 
+			let userAgentString = navigator.userAgent;
+			// Detect Chrome 
+            let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+				//alert("User is using computer chrome: " + chromeAgent); //console.log("User is using computer chrome: " + chromeAgent);
+				//If user is really using Computer Chrome....
+				if (chromeAgent == true)
+					{
+						window.location.visibility = "hidden";
+						window.location.visibility = "visible";
+					}
+					//window.location.visibility = "hidden";
+					//window.location.visibility = "visible";
+					//I think this is working as intended since I don't see iframe being invisible after testing so many times.
+					//Crossing fingers this stays this way. 9/11/20 -> Updated: 9/29/20
+		}
+	</script>
+
+<body style="background-color:#BFBFBF;" class ="mt-4" onload="test_hidden_fix();">
+
+<!--DON'T NEED THE NAVBAR FOR THIS PAGE-->
+
+  <!-- Page Content -->
+  <div class="container">
+	<!---->
+	<!---->
+    <!-- Content Row -->
+    <div class="row justify-content-center">
+      <div class="col-md-12 mb-12">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h3 class="card-title"><b>Cross Origin Communications <br>Website Code Snippet(s)</h3></b>
+			<!-- <img src ="specific_bounty_selections/zombieville_img_1.jpg" width="148" height="177" class="display: block; text-center"> -->
+			<!--Snippet Intro-->
+            <p class="card-text">
+			The website was designed to contain <b>Iframes</b> for a majority of content throughout the portfolio sites. 
+			<br><br>The intention was to communicate with certain pages by appending to the website's overall URL and handle some automated inputs.
+			<br><br>However, since the Iframes contain contents that are in different locations, thus the <b>Cross Origin problems</b> began.
+			<br><br>Fear not, as we live in a digital age where help can be achieved by reading past documentation and understanding how the components are intended to work.
+			<hr style="border: 1px solid grey;">
+			To start with the page communications. I set up an button inside the Iframe content to have an <b>A HREF</b> location of the page I want to access with a URL along with a custom addition.
+			</p>
+			
+			<!--Code Snippet Image 1-->
+			<div style="text-align:center;" >
+			<div style="display: inline-block; text-align: left;">
+			<p class="mt-2 p-2" style = "font-size:10px; word-break: break-all; background-color:#000000;">
+				<span style="color:#36a0c9;">a href= </span> <span style="color:#632c0c;">"../../contact.html?data=codeweb1" </span> <br>
+				<span style="color:#36a0c9;">target=_top </span> <br>
+				<span style="color:#36a0c9;">class=</span> <span style="color:#632c0c;">"btn btn-primary btn-success m-3"</span> <span style="color:#632c0c;">Share your thoughts with me!</span><br>
+			</p>
+			</div>
+			</div>
+			<!--End Code Snippet 1-->
+			
+			
+			<p class = "mt-2">
+			Since the button is inside the Iframe, I've added the following component: <span style="color:#1c7354;"><b>target=_top</b></span>
+			This will allow the main web page to jump to different web page.
+			Then, the web page will load as normal but the URL will now contain the custom URL component.<br><br>
+			Now after the web page has finished loading, inside I have the following code snippet: 
+			</p>
+			
+			<!--Code Snippet #2-->
+			<div style="text-align:center;" >
+			<div style="display: inline-block; text-align: left;">
+			<p class="mt-2 p-2" style = "font-size:10px; word-break: break-all; background-color:#000000;">
+				
+				<span style="color:#99a108;">function test_check() </span><br>					<!--function-->
+				{<br>
+				<span style="color:#298f10;">//contact.html?data=codeweb1</span><br>			<!--comment-->
+				<span style="color:#298f10;">//^Original 'url' to edit above!</span><br>		<!--comment-->
+				<span style="color:#298f10;">//Assign the current url to variable</span><br> 	<!--comment-->
+				<span style="color:#571b01;">var assign_to_pass = window.location.href;</span><br><!--var-->
+				<span style="color:#298f10;">//console.log(assign_to_pass);</span><br>			<!--comment-->
+				<span style="color:#298f10;">//Now trim the string to contain what we need to send</span><br>						<!--comment-->
+				<span style="color:#571b01;">assign_to_pass = assign_to_pass.substr(assign_to_pass.lastIndexOf("=")+1);</span><br>	<!--var-->
+				<span style="color:#298f10;">//console.log(assign_to_pass);</span><br>												<!--comment-->
+				<span style="color:#298f10;">//Now pass the data to the post message turtle!</span><br>								<!--comment-->
+				<span style="color:#571b01;">document.getElementById('iframe_setup_id').contentWindow.postMessage(assign_to_pass,'*');</span><br> <!--var-->
+				}<br>
+			</p>
+			</div>
+			</div>
+			<!--End Code Snippet #2-->
+			
+			<p class="mt-2 p-2">
+				The intention of the code snippet above was to set a variable's value with the current url that was generated after 
+				clicking a web button that changes the <b>PARENT'S PAGE</b> location. <br><br>
+				The function as you've seen will be executed inside what is referred to as a <b>'parent' page</b>. 
+				A parent page is generally considered as web page that contains an Iframe and is intended to interact with such Iframe.<br><br>
+				Then the URL is assigned to the variable and we trim that value to what we really need after a certain character.
+				Once we've trimmed that variable's value, we then pass that value to the Iframe using <b>POSTMESSAGE</b> method. 
+			</p>
+			
+			
+			<!--Code Snippet #3-->
+			<div style="text-align:center;" >
+			<div style="display: inline-block; text-align: left;">
+			<p class="mt-2 p-2" style = "font-size:10px; word-break: break-all; background-color:#000000;">
+				
+				<span style="color:#571b01;">window.addEventListener("message", receiveMessage, false);</span><br>				<!--var-->
+				<span style="color:#99a108;">function receiveMessage(event) </span><br>											<!--function-->
+				{<br>
+				<span style="color:#298f10;">//Now check the data to see what'll contain.</span><br>							<!--comment-->
+				<span style="color:#571b01;">var check_data = event.data;</span><br>											<!--var-->
+				<span style="color:#298f10;">////////////////////////////////////////////</span><br>							<!--comment-->
+				<span style="color:#298f10;">//If check contains subject for discussing thoughts regarding code </span><br>		<!--comment-->
+				<span style="color:#04b35e;"> if (check_data.includes("code"))</span><br> 										<!--if-->
+				{<br>
+				<span style="color:#571b01;">document.getElementById("cc_c").checked = true;</span><br> 						<!--var-->
+				<span style="color:#298f10;">//Delete the code part and have the left overs</span><br>							<!--comment-->
+				<span style="color:#571b01;">check_data = check_data.substr(check_data.lastIndexOf("code")+1);</span><br>		<!--var-->
+				<span style="color:#298f10;">////Check if user wants to discuss thoughts regarding website</span><br>			<!--comment-->
+				<span style="color:#04b35e;">if (check_data.includes("web"))</span><br> 										<!--if-->
+				{<br>
+				<span style="color:#298f10;">//Remove the "web" part and submit the number right inside the textbox!</span><br>	<!--comment-->
+				<span style="color:#571b01;">check_data = check_data.substr(check_data.lastIndexOf("b")+1);</span><br> 			<!--var-->
+				<span style="color:#571b01;">document.getElementById("1726805860").value += 				</span> 			<!--var-->
+				<span style="color:#8469ff;">"Hello!\n\nI'd like to discuss my thoughts regarding your website code #"</span>	<!--text-->
+				<span style="color:#571b01;">+ check_data + </span> 															<!--var-->
+				<span style="color:#8469ff;"> ".\n\n[INSERT YOUR REASON(S) TO THIS MESSAGE.]\n\nI look forward from hearing from you!\n";</span> <!--text-->
+				}&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;}<br>
+			</p>
+			</div>
+			</div>
+			<!--End Code Snippet #3-->
+			
+			<p class="mt-2 p-2">
+			The previous code snippet allows the Iframe page to receive the message from the parent page, which would be the trimmed URL.
+			The function would check which section the first custom component belongs to: (I.e: Coding, Bounty, etc.)
+			Then check if there's a sub-section for that previously checked section. (I.e.: Coding -> Website)
+			If there's multiple entries for the regular and/or sub-sections, then trim the section string out of it and append the remaining number to the input text box.
+			<br><br>
+			</p>
+			
+			<!--End Results-->
+			<h3 class="card-title"><b>Cross Origin Communications <br>Website Code Snippet<br>End Result</h3></b>
+			<img src="code_web_snippet_1_end_result.PNG" style="" alt="Missing End Result image!">
+			<p class="mt-2 p-2">
+			The end result yielded in the previous image as shown. The intention for this process was to provide the following:			
+			</p>
+			<ul>
+				<li><b>Automated text and selection input(s)</b> into my contact form, depending on what subjects the user has chosen to contact me.</li>
+				<li><b>Easier use of access</b> for users to help remind the user in which specific materials the user was contacting me about.</li>
+			</ul>
+			<p class="mt-2 p-2">
+			What do you think of this particular code snippet and information(s) presented?<br><br>
+			If you have any thoughts to share, feel free to click the green button below to share your thoughts.<br>
+			By clicking on said button, <b>you would see this website process occur in front of you.</b>
+			</p>
+			<!--End End Results-->
+			
+			<!--TimeStamp-->
+			<hr style="border: 1px solid grey;">
+			<p class="mt-2 p-2" style="font-size:10px;">
+			[Last Updated: 10/01/20 7:38pm]
+			</p>
+			<!--End TimeStamp-->
+			
+			<!--Resources section-->
+			<h3 class="card-title"><b>Sources<br></h3></b>
+			<p style="">
+			Working knowledge doesn't appear out of <i><b>thin air</b></i>. We live in a generation with easy access to loads of information.<br>
+			See the following links to help you understand some materials for your interests.<br> 
+			<span style="font-size:12px;">(Clicking on these links will override the entirety of this page.)</span><br><br> 
+			<!--Link 1-->
+			<span style="font-size:10px;">
+			<a href="https://stackoverflow.com/questions/251420/invoking-javascript-code-in-an-iframe-from-the-parent-page" target=_top >https://stackoverflow.com/questions/251420/invoking-javascript-code-in-an-iframe-from-the-parent-page</a><br>
+			<a href="https://stackoverflow.com/questions/2400312/substring-with-reverse-index" target=_top> https://stackoverflow.com/questions/2400312/substring-with-reverse-index</a><br>
+			</p>
+			<!--End Resources section-->
+			
+		  </div>
+		  
+		  
+		  <!--FOOTER!-->
+          <div class="card-footer text-center">
+            <a href="../website_code_menu.html" class="btn btn-primary btn-danger m-3 ">Return to Website Code menu</a>
+			<a href="../../contact.html?data=codeweb1" target=_top class="btn btn-primary btn-success m-3">Share your thoughts with me!</a>
+			<a href="../coding_menu.html" class="btn btn-primary btn-danger m-3 ">Return to Overall Code menu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+	
+	<!---->
+	<!---->
+	<!---->
+  </div>
+  <!-- /.container -->
+
+  <!---->
+  <!---->
+  <!---->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

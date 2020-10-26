@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>website_code_snippet_2</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!--From W3 schools to help with slideshow-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<!-- Custom styles for this template -->
+	<link href="../../css/small-business.css" rel="stylesheet">
+
+  
+</head>
+	<!--Work around attempt #5 to prevent Chrome's inconsistent iframe content rendering.-->
+	<script>
+		function test_hidden_fix()
+		{
+			//https://www.geeksforgeeks.org/how-to-detect-the-user-browser-safari-chrome-ie-firefox-and-opera-using-javascript/
+			//Detect if using computer chrome!
+			// Get the user-agent string 
+			let userAgentString = navigator.userAgent;
+			// Detect Chrome 
+            let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+				//alert("User is using computer chrome: " + chromeAgent); //console.log("User is using computer chrome: " + chromeAgent);
+				//If user is really using Computer Chrome....
+				if (chromeAgent == true)
+					{
+						window.location.visibility = "hidden";
+						window.location.visibility = "visible";
+					}
+					//window.location.visibility = "hidden";
+					//window.location.visibility = "visible";
+					//I think this is working as intended since I don't see iframe being invisible after testing so many times.
+					//Crossing fingers this stays this way. 9/11/20 -> Updated: 9/29/20
+					window.scrollTo(0, 0);
+		}
+	</script>
+
+<body style="background-color:#BFBFBF;" class ="mt-4" onload="test_hidden_fix();">
+
+<!--DON'T NEED THE NAVBAR FOR THIS PAGE-->
+
+  <!-- Page Content -->
+  <div class="container">
+	<!---->
+	<!---->
+    <!-- Content Row -->
+    <div class="row justify-content-center">
+      <div class="col-md-12 mb-12">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <h3 class="card-title"><b>Chrome Iframe Rendering Fix<br>Website Code Snippet(s)</h3></b>
+			<!-- <img src ="specific_bounty_selections/zombieville_img_1.jpg" width="148" height="177" class="display: block; text-center"> -->
+			<!--Snippet Intro-->
+            <p class="card-text">
+			This website was primarily designed to use using <b>NotePad++ and Google Chrome</b>.  
+			With this simple combination, I've managed to overcome many issues through trial and error processes.<br><br>
+			I've used the <b>Iframe component</b> to display majority of contents that you may have seen throughout many pages. Using Iframes have their ups and downs<br><br>
+			I recall <b><u>one unusual occurrence</b></u> when I was testing my Iframe content within web pages with computer Chrome browser.<br><br>
+			This infrequent occurrence resulted that the Iframe content was <b>somehow rendered invisible yet functional at the same</b>. The content was able to be interacted
+			with but it did not show up on screen unless the screen was <b>RESIZED or REFRESHED.</b><br><br>
+			This was the most unusual for me because I wasn't sure what was causing this issue with Chrome.<br>
+			So I've attempted some work-arounds and <b>I have found the following code snippet that fixed my Chrome Iframe rendering problem.</b>
+			</p>
+			<hr style="border: 1px solid grey;">
+			
+			<!--Code Snippet Image 1-->
+			<div style="text-align:center;" >
+			<div style="display: inline-block; text-align: left;">
+			<p class="mt-2 p-2" style = "font-size:10px; word-break: break-all; background-color:#000000;">
+				<span style="color:#99a108;">test_hidden_fix() </span><br>					<!--function-->
+				{<br>
+				<span style="color:#571b01;">let userAgentString = navigator.userAgent;</span><br>					<!--var-->
+				<span style="color:#571b01;">let chromeAgent = userAgentString.indexOf("Chrome") > -1;</span><br>	<!--var-->
+				<span style="color:#04b35e;">if (chromeAgent == true)</span><br>									<!--If-->
+				&nbsp;&nbsp;{<br>
+				&nbsp;&nbsp;&nbsp;<span style="color:#571b01;">window.location.visibility = "hidden";</span><br>									<!--var-->
+				&nbsp;&nbsp;&nbsp;<span style="color:#571b01;">window.location.visibility = "visible";</span><br>									<!--var-->
+				&nbsp;&nbsp;}<br>
+				}<br>
+			</p>
+			</div>
+			</div>
+			<!--End Code Snippet 1-->
+			
+			<p class = "mt-2 p-2">
+			There are two parts at work within the previous code snippet.<br>
+			This function is called when Iframe content has finished loaded. The first part is the <b>IF STATEMENTS.</b>
+			The variables basically assign the value of what kind of browser is being used to access the Iframe contents.<br><br>
+			If the browser that's currently being used <b><u>is actually Google Chrome</b></u>, then proceed with the 2nd component.<br><br>
+			The second component basically renders the Iframe content <b>"invisible"</b>, despite the content existing already.<br>
+			Then, the Iframe content is rendered <b>visible</b> once again.<br><br>
+			</p>
+
+			<!--End Results-->
+			<h3 class="card-title"><b>Chrome Iframe Rendering Fix<br>Website Code Snippet<br>End Result</h3></b>
+			<!-- <img src="code_web_snippet_1_end_result.PNG" style="" alt="Missing End Result image!"> -->
+			<p class="mt-2 p-2">
+			The end result yielded in the following solution: <b>Google Chrome will no longer randomly render my Iframe content invisible without the need of resizing the screen.</b><br><br>
+			Despite this workaround providing me some website relief, it comes with one downside. <span color="color:#990a00;"><b>Longer "load" times.</b></span><br><br>
+			The function doesn't check to see if the Iframe content is accidentally rendered invisible because said content is considered to be visible.<br>
+			Not only that, but if you click around and drag an element from an 'invisible' page, one can see that elements do exist and function.<br><br>
+			The only <b>simple</b> way to make the Iframe content rendered 100% of the time <b>without resizing the screen</b> was to use 
+			the previously shown function. <br>
+			</p>
+			
+			<p class="mt-2 p-2">
+			What do you think of this particular code snippet and information(s) presented?<br><br>
+			If you have any thoughts to share, feel free to click the green button below to share your thoughts.<br>
+			</p>
+			<!--End End Results-->
+			
+			<!--TimeStamp-->
+			<hr style="border: 1px solid grey;">
+			<p class="mt-2 p-2" style="font-size:10px;">
+			[Last Updated: 10/01/20 7:37pm]
+			</p>
+			<!--End TimeStamp-->
+			
+			<!--Resources section-->
+			<h3 class="card-title"><b>Sources<br></h3></b>
+			<p style="">
+			Working knowledge doesn't appear out of <i><b>thin air</b></i>. We live in a generation with easy access to loads of information.<br>
+			See the following links to help you understand some materials for your interests.<br> 
+			<span style="font-size:12px;">(Clicking on these links will override the entirety of this page.)</span><br><br> 
+			<!--Link 1-->
+			<span style="font-size:10px;">
+			<a href="https://www.geeksforgeeks.org/how-to-detect-the-user-browser-safari-chrome-ie-firefox-and-opera-using-javascript/" target=_top >https://www.geeksforgeeks.org/how-to-detect-the-user-browser-safari-chrome-ie-firefox-and-opera-using-javascript/</a><br>
+			</p>
+			<!--End Resources section-->
+			
+		  </div>
+		  
+		  
+		  <!--FOOTER!-->
+          <div class="card-footer text-center">
+            <a href="../website_code_menu.html" class="btn btn-primary btn-danger m-3 ">Return to Website Code menu</a>
+			<a href="../../contact.html?data=codeweb2" target=_top class="btn btn-primary btn-success m-3">Share your thoughts with me!</a>
+			<a href="../coding_menu.html" class="btn btn-primary btn-danger m-3 ">Return to Overall Code menu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+	
+	<!---->
+	<!---->
+	<!---->
+  </div>
+  <!-- /.container -->
+
+  <!---->
+  <!---->
+  <!---->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
+
+

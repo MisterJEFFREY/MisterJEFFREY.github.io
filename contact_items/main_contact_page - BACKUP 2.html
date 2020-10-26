@@ -1,0 +1,370 @@
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>JC_PROTO_WEBSITE:From Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/small-business.css" rel="stylesheet">
+
+</head>
+
+<!--NOTE:ADDED TIMER INTERVAL HERE BECAUSE FORM TAGS DO NOT SUPPORT ONLOAD()-->
+<body style="background-color:#BFBFBF;" onload="setTimeout(auto_size_message_box,0100);"> <!--Set for .10 second(S)-->
+
+
+<!--This is for the main Contact Subpage-->
+
+<!--Recieved from Stefano Brilli-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+<script type="text/javascript"></script>
+
+
+<!--IS THIS EVEN BEING USED?!?!-->
+<script>
+$('#bootstrapForm').submit(function (event) {
+	console.log("HELP! THIS WON'T CONSOLE LOG! WHY?")
+    //event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+		<!-- window.location = 'contact_success.html' -->
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            alert('Form Submitted. Thanks.')
+            // You can also redirect the user to a custom thank-you page:
+             window.location = 'contact_success.html' 
+        }
+    })
+})
+</script>
+
+<!----->
+
+
+
+  <!-- Page Content -->
+  <div class="container"  >
+	<div class="col-md-12 mb-6">
+        <div class="card h-100">
+          <div class="card-body" style="overflow: auto;">
+
+		<!---->
+		<!---->
+		<!---->			
+				<!-- <form action="contact_success.html"	  -->
+				<!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSeuXYvsEt8Kx-NWJ6SYSQQ35PGS3j0L-YvWB_PTY2Xy1QaXMg/formResponse" -->
+				 <!-- <form action="contact_success.html"	 -->
+					<!--onsubmit="return redirect_user(event);"-->
+				 <form 
+						onsubmit="return redirect_user(event);"
+						target="_self"
+						id="bootstrapForm"
+						method="POST"
+						action="https://docs.google.com/forms/d/e/1FAIpQLSeuXYvsEt8Kx-NWJ6SYSQQ35PGS3j0L-YvWB_PTY2Xy1QaXMg/formResponse"
+					  >
+					 <form>
+					<fieldset>
+						<h3 class="text-center">Contact The Jeff<br><small></small></h3>
+					</fieldset>
+
+
+					<!-- Field type: "short" id: "1853799674" -->
+					<fieldset>
+						<legend for="1853799674" class="text-center">Name:</legend>
+						<div class="form-group">
+							<input style="text-align:center;" id="1535074244"  type="text" name="entry.1535074244" class="form-control" width="200%" required >
+						</div>
+					</fieldset>
+
+
+					<!-- Field type: "short" id: "393217484" -->
+					<fieldset>
+						<legend for="393217484" class="text-center">Email:</legend>
+						<div class="form-group">
+							<input style="text-align:center;" id="126409047" type="text" name="entry.126409047" class="form-control" required >
+						</div>
+					</fieldset>
+
+
+					<!-- Field type: "choices" id: "1579405966" -->
+					<fieldset >
+						<legend for="1579405966" class="text-center ">Subject:</legend>
+						<p id ="checkbox_alert_text" style="color:#CE2D1B; display:none;"class="text-center ">Please check 1 or more for your message!</p>
+						<div class="form-group text-center" >
+							<div class="checkbox" >
+								<label style="padding-right:0.5em">
+									<input type="checkbox" name="entry.784052716" value="Casual Converstation(s)"	id = "cc_c" onclick="checkbox_msg_clear()">
+									Casual Converstation(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label style="padding-right:0.4em">
+									<input type="checkbox" name="entry.784052716" value="Employment Material(s)" 	id = "em_c" onclick="checkbox_msg_clear()">
+									Employment Material(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label style="padding-right:1.4em">
+									<input type="checkbox" name="entry.784052716" value="Bounty Submission(s)"		id="bounty_check" onclick="checkbox_msg_clear()">
+									Bounty Submission(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label style="padding-right:5.6em">
+									<input type="checkbox" name="entry.784052716" value="Feedback(s)"				id = "f_c" onclick="checkbox_msg_clear()">
+									Feedback(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label style="padding-right:5.3em">
+									<input type="checkbox" name="entry.784052716" value="Donations(s)"				id = "d_c" onclick="checkbox_msg_clear()">
+									Donations(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label >
+									<input type="checkbox" name="entry.784052716" value="__other_option__" id ="o_c" onclick="checkbox_msg_clear()">
+								</label>
+								<input type="text" name="entry.784052716.other_option_response" placeholder="Other" onclick="checkbox_msg_clear()">
+							</div>
+						</div>
+					</fieldset>
+
+
+					<!-- Field type: "paragraph" id: "1080509416" -->
+					<fieldset>
+						<legend for="1080509416" class="text-center ">Message:</legend>
+						<p id ="message_alert_text" style="color:#CE2D1B; display:none;"class="text-center ">Please enter more for your message!</p>
+						<div class="form-group" height="150%">
+							<textarea id="1726805860" name="entry.1726805860" class="form-control mb-2 " style="resize: none; display:inline-block; padding:15px 10px;line-height:140%; height:auto;" required></textarea>
+						</div>
+					
+					</fieldset>
+					
+					<input type="hidden" name="fvv" value="1">
+					<input type="hidden" name="fbzx" value="-8769114733424782473">
+					<!--
+						CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+						This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+						Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+						We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+					-->
+					
+					<input type="hidden" name="pageHistory" value="0">
+					
+					<!--Submit Button Turtles-->
+					<div class="text-center">																								<!--onsubmit="redirect_user();" onclick="setTimeout(redirect_user,0050);"-->
+					<input class="btn btn-warning btn-sm mb-0 "  type="submit" value="Submit Message" form="bootstrapForm" onclick="setTimeout(redirect_user,0050);"> <!--form="bootstrapForm" -->
+					<p style="font-size:8px">
+					Contact Form Powered by Google Forms
+					<br>
+					Thank you Google & Stefano Brilli for helping me out.
+					</p>
+					</div>
+					<!---->
+					
+				</form>
+		<!---->
+		<!---->
+		<!---->
+		
+			</div>
+
+        </div>
+      </div>
+	  
+	  
+	<!----><!----><!----><!----><!---->
+	<!----><!----><!---->
+	<!----><!---->
+	<!---->
+	</div>
+</form>
+
+<!--This is an attempt to auto check check box from previous page-->
+<script>
+<!-- 		$( document ).ready(function() {
+			<!-- $('#bounty_check').attr('checked', true); --> -->
+			<!-- $(':bounty_check').prop('checked', true); -->
+		<!-- }); -->
+</script>
+<!--UPDATE! THE FOLLOWING WORKS AS INTENDED! $('#bounty_check').attr('checked', true);-->
+<!--Now that I got that, I'll try with the hashing...-->
+<!--Hashing didn't work because of same origin policy.-->
+
+<!--https://www.w3schools.com/jsref/prop_checkbox_checked.asp-->
+ <script>
+ <!--This works now in JS. Now the next step is to call iframe function from parent page...-->
+ function check_bounty(){
+<!-- 	document.getElementById("bounty_check").checked = true;
+	<!-- document.getElementById("1726805860").value = "I have a bounty submission for you." --> -->
+	
+ }
+  </script>
+  
+  <!--https://stackoverflow.com/questions/251420/invoking-javascript-code-in-an-iframe-from-the-parent-page-->
+  <!--This is working as I wanted, for the most part-->
+  <script>
+			window.addEventListener("message", receiveMessage, false);
+
+			<!--Okay folks, we've now receieved the message and cross origin is no longer a worry!-->
+			function receiveMessage(event)
+			{
+					<!--Test is successful! Use this as reference!-->
+					//var test_message;
+					//test_message = "Passed message says: " + event.data;
+					//console.log(test_message);
+					<!--The lines above does successfully receive the data as intended!-->
+					//I'm aware that a switch case with conditions will be better here, but at least it works for now. I'll change it up to nested switch case w/ conditions when I get it to work later on!
+					<!--Now check the data to see if it contains bounty. If it does, check it please!-->
+					var check_data = event.data;
+					if (check_data.includes("bounty"))
+					{document.getElementById("bounty_check").checked = true;
+						//Delete the bounty part and have the left overs
+						check_data = check_data.substr(check_data.lastIndexOf("bounty")+1);
+						//console.log(check_data);//Delete after testing!
+						//Now check which bounty is it specifically
+						if(check_data.includes("zv"))
+							{
+							document.getElementById("1726805860").value = "Hello!\n\nI have a bounty submission for you.\nIt's regarding the ZombieVille Bounty ";
+							//If there's multiple bounties for a single kind of bounty
+							check_data = check_data.substr(check_data.lastIndexOf("v")+1);
+							//console.log(check_data);//Delete after testing!
+							//Append to the Message Box with the specific number and then the remainder of the text!
+							document.getElementById("1726805860").value += check_data + " that's listed from your Bounties page!\n";
+							}
+					
+					}else{
+					//Out of scope from selections. Logged to console here just in case, but user will not see this conventionally.
+					console.log("\nSCOPE ERROR FROM PREVIOUSLY LISTED OPTIONS\nOR REACHED CONTACT PAGE THRU NAVBAR INSTEAD, WHICH IS NOT A WORRY!\nSORRY TO SPOOK YOU!")
+					}
+			}
+	</script>
+	
+	<script type="text/javascript">
+	function auto_size_message_box()
+		{
+		<!-- alert("Page is loaded"); -->
+		//Okay. So what I've read is that this function fails to work because it needed some time to load
+		//the iframe and the element didn't exist yet. So I've basically added a timer that delays the function.
+		//It'll work for now.
+		var msg_box = document.getElementById('1726805860');
+		//console.log(msg_box);
+		msg_box.style.height = "auto";
+		msg_box.style.height =  (msg_box.scrollHeight + 'px'); 
+		}
+	</script>
+	
+	<script type="text/javascript"> 
+	///https://www.geeksforgeeks.org/how-to-create-auto-resize-textarea-using-javascript-jquery/
+	//This works as expected, but with input. Now I gatta remember how to do this onload()
+	//Update: Now got the onload working! Wooot!
+        $('#1726805860').on('input', function () { 
+            this.style.height = 'auto'; 
+            this.style.height =  
+                    (this.scrollHeight) + 'px'; 
+        }); 
+    </script>
+	
+	
+	
+	
+	<!--Hopefully this redirects the user to custom thank you page-->
+	<script type="text/javascript">
+		function redirect_user(e)
+		{
+			console.log("\nInside Redirect User function now\n");
+			//Okay. Now we got the redirecting working now AND sending email with having the google form url inside the form action from earlier.
+			//Now we gatta jump up to show the user that an email has been submitted!
+			//UPDATE: This "override" works by having the submit button delay immediately redirect the google form to my custom 
+			//'thank you page' really fast without the user usually noticing. Reason for keeping the google form url is because it'll automatically send 
+			//the email contents but not when the form action links to the custom thanks page. Now I need to make sure the form actually
+			//checks to see if there's anything inside input boxes before re-directing to the custom page.
+			var temp_1 = document.getElementById("1535074244").value.length;
+			console.log("Current Char length inside name textbox: " + temp_1 + " chars\n");
+			var temp_2 = document.getElementById("126409047").value.length;
+			console.log("Current Char length inside email textbox: " + temp_2 + " chars\n");
+			var temp_3 = document.getElementById("1726805860").value.length;
+			console.log("Current Char length inside MSG textbox: " + temp_3 + " chars\n");
+			
+			check_pass = false;	//Move this here so it can be in scope for the upcoming check.
+			if (temp_1 > 2 && temp_2 > 5 && temp_3 > 5)
+			{
+				document.getElementById("message_alert_text").style.display = "none";//Just in case!
+				console.log("\nUser DID entered enough data to send!\n");
+				//Now check if any check boxes are ticked!
+				var temp_checkbox_1 =  document.getElementById("cc_c").checked; console.log("The Casual Convo checkbox is checked: "+ temp_checkbox_1);
+				var temp_checkbox_2 =  document.getElementById("em_c").checked; console.log("The Emplo Materi checkbox is checked: "+ temp_checkbox_2);
+				var temp_checkbox_3 =  document.getElementById("bounty_check").checked; console.log("The Bounty checkbox is checked: "+ temp_checkbox_3);
+				var temp_checkbox_4 =  document.getElementById("f_c").checked; console.log("The Feedback checkbox is checked: "+ temp_checkbox_4);
+				var temp_checkbox_5 =  document.getElementById("d_c").checked; console.log("The Donation checkbox is checked: "+ temp_checkbox_5);
+				var temp_checkbox_6 =  document.getElementById("o_c").checked; console.log("The Other checkbox is checked: "+ temp_checkbox_6);
+				///Starting for loop to check each check-box and check if at least one box is checked
+				var checking;  var check_array = [false,temp_checkbox_1,temp_checkbox_2,temp_checkbox_3,temp_checkbox_4,temp_checkbox_5,temp_checkbox_6]
+				for (checking = 1; checking < 7; checking++)
+					{
+						if (check_array[checking]==true)
+							{
+								check_pass=true;
+								console.log("\nCheckbox " + checking + " Is Checked!\n");
+								if (check_pass == true){document.getElementById("checkbox_alert_text").style.display = "none";} //Just in case...
+							}
+					}
+				if (check_pass == true)
+					{
+						console.log("\nThe Checbox checking check has passed! Now redirecting user to custom thank you page!\n")
+						//e.preventDefault(); //Putting this here will not send the form data to me.
+						window.location.assign("contact_success.html");//I guess this is the answer to my problems of redirecting user to custom thank you page!
+						return true;
+					}else{
+						console.log("\nThe Checbox checking check has not passed as NO CHECKBOX IS CHECKED!!\nNo Message sent at this time!");
+						e.preventDefault(); //This is here to prevent the form to show its google form ui if there was an error.
+						document.getElementById("checkbox_alert_text").style.display = "block";
+						return false;
+						//HOORAY! I THE GOT GOOGLE FORM FROM SUBMITTING AND REDIRECTING ITSELF TO REGULAR G FORM GUI WHEN NO CHECKBOX IS CHECKED!!!
+						//https://stackoverflow.com/questions/3350247/how-to-prevent-form-from-being-submitted
+						//Now, even though that problem is fixed, there's a new problem... if the user corrects the error and clicks on submit again,
+						//the form will NOT send any data but acts if it does... why?!?!?!
+						//Update. Window.location.assign solved the problem now. It keeps the google form url to send the form data to me
+						//and then redirect the user of successful form delivery.
+						}
+			}else{
+				console.log("\nUser entered too little data! Why would the user do this?\n");
+				//Adding this just in case if user added enough to message box after seeing error message....
+				if (temp_3 < 6){document.getElementById("message_alert_text").style.display = "block";}
+				if (check_pass == false){document.getElementById("checkbox_alert_text").style.display = "block";}
+				e.preventDefault();	// I know this may give the console an error, but I'm keeping it here just in case to stop 
+				//google form from redirecting itself to show its own gui, which is not what I'm intending for.
+				return false;
+				
+			}
+		}
+	</script>
+	
+	<script type="text/javascript">
+	//I didn't want to do this but due to the nature of how I've written the previous function, I'm going to do the following...
+	function checkbox_msg_clear()
+		{
+			if (document.getElementById("checkbox_alert_text").style.display = "block")
+			{document.getElementById("checkbox_alert_text").style.display = "none"; return}
+			//In case if user unchecks checkbox for whatever reason....
+		}
+	
+	</script>
+	
+	
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>JC_PROTO_WEBSITE:From Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/small-business.css" rel="stylesheet">
+
+</head>
+
+<!--NOTE:ADDED TIMER INTERVAL HERE BECAUSE FORM TAGS DO NOT SUPPORT ONLOAD()-->
+<body style="background-color:#BFBFBF;" onload="setTimeout(auto_size_message_box,0100);"> <!--Set for .10 second(S)-->
+
+
+<!--This is for the main Contact Subpage-->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+<script type="text/javascript"></script>
+
+
+<!---->
+<script>
+$('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            alert('Form Submitted. Thanks.')
+            // You can also redirect the user to a custom thank-you page:
+            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        }
+    })
+})
+</script>
+
+<!----->
+
+
+
+  <!-- Page Content -->
+  <div class="container"  >
+	<div class="col-md-12 mb-6">
+        <div class="card h-100">
+          <div class="card-body" style="overflow: auto;">
+
+		<!---->
+		<!---->
+		<!---->			
+				<!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSeuXYvsEt8Kx-NWJ6SYSQQ35PGS3j0L-YvWB_PTY2Xy1QaXMg/formResponse" -->
+				<form action="contact_success.html"	  
+					  target="_self"
+					  id="bootstrapForm"
+					  method="POST">
+					<fieldset>
+						<h3 class="text-center">Contact The Jeff<br><small></small></h3>
+					</fieldset>
+
+
+					<!-- Field type: "short" id: "1853799674" -->
+					<fieldset>
+						<legend for="1853799674" class="text-center">Name:</legend>
+						<div class="form-group">
+							<input style="text-align:center;" id="1535074244"  type="text" name="entry.1535074244" class="form-control" width="200%" required >
+						</div>
+					</fieldset>
+
+
+					<!-- Field type: "short" id: "393217484" -->
+					<fieldset>
+						<legend for="393217484" class="text-center">Email:</legend>
+						<div class="form-group">
+							<input style="text-align:center;" id="126409047" type="text" name="entry.126409047" class="form-control" required >
+						</div>
+					</fieldset>
+
+
+					<!-- Field type: "choices" id: "1579405966" -->
+					<fieldset >
+						<legend for="1579405966" class="text-center ">Subject:</legend>
+						<div class="form-group text-center" >
+							<div class="checkbox" >
+								<label style="padding-right:0.5em">
+									<input type="checkbox" name="entry.784052716" value="Casual Converstation(s)">
+									Casual Converstation(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label style="padding-right:0.4em">
+									<input type="checkbox" name="entry.784052716" value="Employment Material(s)">
+									Employment Material(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label style="padding-right:1.4em">
+									<input id="bounty_check" type="checkbox" name="entry.784052716" value="Bounty Submission(s)">
+									Bounty Submission(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label style="padding-right:5.6em">
+									<input type="checkbox" name="entry.784052716" value="Feedback(s)">
+									Feedback(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label style="padding-right:5.3em">
+									<input type="checkbox" name="entry.784052716" value="Donations(s)">
+									Donations(s)
+								</label>
+							</div>
+							<div class="checkbox">
+								<label >
+									<input type="checkbox" name="entry.784052716" value="__other_option__">
+								</label>
+								<input type="text" name="entry.784052716.other_option_response" placeholder="Other">
+							</div>
+						</div>
+					</fieldset>
+
+
+					<!-- Field type: "paragraph" id: "1080509416" -->
+					<fieldset>
+						<legend for="1080509416" class="text-center ">Message:</legend>
+						<div class="form-group" height="150%">
+							<textarea id="1726805860" name="entry.1726805860" class="form-control mb-2 " style="resize: none; display:inline-block; padding:15px 10px;line-height:140%; height:auto;" required></textarea>
+						</div>
+					
+					</fieldset>
+					
+					<input type="hidden" name="fvv" value="1">
+					<input type="hidden" name="fbzx" value="-8769114733424782473">
+					<!--
+						CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+						This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+						Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+						We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+					-->
+					
+					<input type="hidden" name="pageHistory" value="0">
+					
+					<!--Submit Button Turtles-->
+					<div class="text-center">
+					<input form="bootstrapForm" class="btn btn-warning btn-sm mb-0 "  type="submit" value=" Submit Message">
+					<p style="font-size:8px">
+					Contact Form Powered by Google Forms
+					<br>
+					Thank you Google for helping me out.
+					</p>
+					</div>
+					<!---->
+					
+				</form>
+		<!---->
+		<!---->
+		<!---->
+		
+			</div><!--End the card's body-->
+<!--           <div class="card-footer">
+            <a href="#" class="btn btn-primary btn-sm">More Info</a>
+          </div> -->
+        </div>
+      </div>
+	  
+	  
+	<!----><!----><!----><!----><!---->
+	<!----><!----><!---->
+	<!----><!---->
+	<!---->
+	</div>
+</form>
+
+<!--This is an attempt to auto check check box from previous page-->
+<script>
+<!-- 		$( document ).ready(function() {
+			<!-- $('#bounty_check').attr('checked', true); --> -->
+			<!-- $(':bounty_check').prop('checked', true); -->
+		<!-- }); -->
+</script>
+<!--UPDATE! THE FOLLOWING WORKS AS INTENDED! $('#bounty_check').attr('checked', true);-->
+<!--Now that I got that, I'll try with the hashing...-->
+<!--Hashing didn't work because of same origin policy.-->
+
+<!--https://www.w3schools.com/jsref/prop_checkbox_checked.asp-->
+ <script>
+ <!--This works now in JS. Now the next step is to call iframe function from parent page...-->
+ function check_bounty(){
+<!-- 	document.getElementById("bounty_check").checked = true;
+	<!-- document.getElementById("1726805860").value = "I have a bounty submission for you." --> -->
+	
+ }
+  </script>
+  
+  <!--https://stackoverflow.com/questions/251420/invoking-javascript-code-in-an-iframe-from-the-parent-page-->
+  <!--This is working as I wanted, for the most part-->
+  <script>
+			window.addEventListener("message", receiveMessage, false);
+
+			<!--Okay folks, we've now receieved the message and cross origin is no longer a worry!-->
+			function receiveMessage(event)
+			{
+					<!--Test is successful! Use this as reference!-->
+					var test_message;
+					test_message = "Passed message says: " + event.data;
+					console.log(test_message);
+					<!--The lines above does successfully receive the data as intended!-->
+					<!--Now check the data to see if it contains bounty. If it does, check it please!-->
+					var check_data = event.data;
+					if (check_data.includes("bounty"))
+					{document.getElementById("bounty_check").checked = true;
+						//Delete the bounty part and have the left overs
+						check_data = check_data.substr(check_data.lastIndexOf("bounty")+1);
+						console.log(check_data);//Delete after testing!
+						//Now check which bounty is it specifically
+						if(check_data.includes("zv"))
+							{
+							document.getElementById("1726805860").value = "Hello!\n\nI have a bounty submission for you.\nIt's regarding the ZombieVille Bounty ";
+							//If there's multiple bounties for a single kind of bounty
+							check_data = check_data.substr(check_data.lastIndexOf("v")+1);
+							console.log(check_data);//Delete after testing!
+							//Append to the Message Box with the specific number and then the remainder of the text!
+							document.getElementById("1726805860").value += check_data + " that's listed from your Bounties page!\n";
+							}
+					
+					}else{
+					//Out of scope from selections. Logged to console here just in case, but user will not see this conventionally.
+					console.log("\nSCOPE ERROR FROM PREVIOUSLY LISTED OPTIONS!!")
+					}
+					
+					
+					//var currentUrl = document.referrer;
+					//console.log(currentUrl);
+					//document.getElementById("bounty_check").checked = true;
+					//document.getElementById("1726805860").value = "I have a bounty submission for you. \nIt's regarding the ZombieVille Bounty 1" ;
+					//document.getElementById("1726805860").value += ("\nAPPENDED TEXT");
+					//var currentUrl = document.referrer;
+					//console.log(currentUrl);
+			}
+	</script>
+	
+	<script type="text/javascript">
+	function auto_size_message_box()
+		{
+		<!-- alert("Page is loaded"); -->
+		//Okay. So what I've read is that this function fails to work because it needed some time to load
+		//the iframe and the element didn't exist yet. So I've basically added a timer that delays the function.
+		//It'll work for now.
+		var msg_box = document.getElementById('1726805860');
+		console.log(msg_box);
+		msg_box.style.height = "auto";
+		msg_box.style.height =  (msg_box.scrollHeight + 'px'); 
+		}
+	</script>
+	
+	<script type="text/javascript"> 
+	///https://www.geeksforgeeks.org/how-to-create-auto-resize-textarea-using-javascript-jquery/
+	//This works as expected, but with input. Now I gatta remember how to do this onload()
+        $('#1726805860').on('input', function () { 
+            this.style.height = 'auto'; 
+            this.style.height =  
+                    (this.scrollHeight) + 'px'; 
+        }); 
+    </script>
+	
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>JC_PROTO_WEBSITE:From Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/small-business.css" rel="stylesheet">
+  
+  
+</head>
+
+	<!--Please remove the scroll bars!!-->
+
+<body style="background-color:#BFBFBF;">
+
+<!-- Navigation -->
+  <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color:#215719">-->
+  <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color:#132F0F">
+    <div class="container">
+      <a class="navbar-brand" href="#">Contacting Jeffrey Cosio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="games.html">Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="coding.html">Coding</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bounties.html">Bounties</a>
+		  </li>
+          <li class="nav-item">
+            <a class="nav-link" href="resume.html">Resume</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="contact.html">Contact</a>
+			<span class="sr-only">(current)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+  
+  
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-12 text-center">
+        <img class="img-fluid rounded mb-4 mb-lg-0 text-center" src="contact_items/stock_image_contact_3.jpg"  alt="Contact Image">
+		<!-- <p class="text-center mt-0 " style="font-size:6px">Image Credit to: <a href="https://pixabay.com/users/mohamed_hassan-5229782/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5059159">Mohamed_hassan</a><p> -->
+		<p class="text-center mt-0 " style="font-size:6px">Image Credit to: <a href="https://krstojevtic.com/">Krsto Jevtic</a><p>
+	  </div>
+
+    </div>
+    <!-- /.row -->
+
+	<!--Another iframe attempt-->
+	<script>
+	test_url = parent.document.URL;
+	</script>
+	
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary my-5 py-0 text-center">
+      <div class="card-body">
+        <p class="text-white m-0" >Please use the contact form below for all of your inquires.</p>
+      </div>
+    </div>
+	<!--Iframe content goes here-->
+	<div>
+<!-- 		<iframe class="iframe_setup" id="iframe_setup_id" onload= "test_check()" src="contact_items\main_contact_page.html" + test_url + width ="100%" height = "100%" style="border:none;"  class="mb-5 pb-5"  ></iframe>
+ -->
+	<iframe class="iframe_setup" id="iframe_setup_id" onload="test_check()"  src="contact_items\main_contact_page.html" + test_url + width ="100%" height="100%"  style="border:none;"  class="mb-5 pb-5"  ></iframe>
+	</div>
+	<!-- /.row -->
+	
+	<!---->
+	<!---->
+
+	
+  </div>
+  <!-- /.container -->
+
+  <!---->
+  <!---->
+  <!---->
+  <!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer -->
+  <!-- footer class="py-5 bg-dark" style="background-color:#132F0F" > -->
+  <footer class="py-2" style="background-color:#132F0F" >
+    <div class="container text-center" style="background-color:#132F0F"> 
+      <p class="m-0 text-center text-white my-2" style="font-size:9px;">Special thanks to David T. Miller for helping me start up with this site.
+	  </p>
+      <p class="m-0 text-center text-white my-2" style="font-size:9px;">Along with those that visit this site.
+	  </p>
+	  <p class="m-0 text-center text-white my-2" style="font-size:9px;">Edits are done by the one and only, Jeffrey Cosio
+	  </p>
+	  <a href="#" class="btn text-center btn-success btn-sm">Head To Page Top</a>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!--TESTING-->
+	<script>
+	//var thisURL = window.location.href;
+	//console.log(thisURL);
+	
+	<!-- var thisURL2 = window.top.location; -->
+	<!-- console.log(thisURL2); -->
+	
+	</script>
+	
+	<!--NO LONGER NEEDED!-->
+	<!--Okay, this works so far. Can I access iframe element from parent?-->
+<!-- 	<script>
+	if (window.location.href.indexOf("?data=bounty_check") > -1) {
+     alert("found it");
+	 }
+	 </script> -->
+	 <!-- document.getElementById('iframe_setup_id').contentWindow.document.getElementById('#bounty_check').checked = true; -->
+	<!-- $('#bounty_check').attr('checked', true); -->
+	
+<!-- 	window.frames['iframe_setup_id'].contentDocument.getElementById('bounty_check'); -->
+	
+
+	
+	<script>
+	function test_check(){
+		//file:///C:/Users/Old_Mstr/Documents/for_testing_with_webpages/prototype_website_bootstrap/startbootstrap-small-business-gh-pages/contact.html?data=bountyzv1
+		//^Original 'url' to edit above!
+		
+		<!--Assign the current url to variable-->
+		var assign_to_pass = window.location.href;
+		//console.log(assign_to_pass);
+		<!--Now trim the string to contain what we need to send-->								<!--https://stackoverflow.com/questions/2400312/substring-with-reverse-index-->
+		assign_to_pass = assign_to_pass.substr(assign_to_pass.lastIndexOf("=")+1);
+		//console.log(assign_to_pass);
+		<!--Now pass the data to the post message turtle!-->
+		document.getElementById('iframe_setup_id').contentWindow.postMessage(assign_to_pass,'*');
+	}
+	</script>
+	
+	<!--DELETE TURTLE-->
+	<script>
+		//Delete the next lines as no longer needed anymore for now.
+		<!--If check contains bounty-->
+		<!-- if (window.location.href.indexOf("?data=bounty") > -1)  -->
+		<!-- { -->
+			<!--If check contains bounty for zombieville bounty 1>
+			<!-- if (window.location.href.indexOf("?data=bountyzb1") > -1) -->
+				<!-- { -->
+					<!-- document.getElementById('iframe_setup_id').contentWindow.postMessage('bountyzb1','*'); -->
+				<!-- } -->
+		<!-- document.getElementById('iframe_setup_id').contentWindow.postMessage('foo','*'); -->
+		
+		<!-- } -->
+	</script>
+	
+	<!--No longer needed now-->
+	<!-- document.getElementById('iframe_setup_id').contentWindow.document.getElementById('#bounty_check').checked = true; -->
+	<!-- document.getElementById('iframe_setup_id').contentWindow.check_bounty(); -->
+	<!-- window.frames['iframe_setup_id'].check_bounty(); -->
+	<!--Test function onload for iframe-->
+	<script>
+	function check_url() {
+	
+	<!-- parent.postMessage("This is a message", "*"); -->
+	}
+	<!-- document.getElementById('iframe_setup_id').contentWindow.document.getElementById('#bounty_check').checked = true; -->
+<!-- 	var o = document.getElementsByID('iframe_setup_id')[0];
+<!-- 	o.contentWindow.postMessage('Hello B'); --> -->
+			<!-- document.getElementById('#bounty_check').checked = true; -->
+			<!-- document.getElementById('iframe_setup_id').contentWindow.document.getElementById('#bounty_check').checked = true; -->
+			
+		
+	</script>
+	<script> 
+	<!--https://stackoverflow.com/questions/51114177/iframes-document-is-null-even-though-its-contentwindow-isnt-->
+<!-- 	var iframe = document.getElementById('iframe_setup_id');
+<!-- 	iframe.onload = function() {
+</script>
+
+<!--Test postmessage turtle-->
+<!--https://javascript.info/cross-window-communication#:~:text=allow%2Dsame%2Dorigin,all%20implied%20restrictions%20for%20scripts.-->
+<script>
+
+
+</script>
+  
+</body>
+
+</html>

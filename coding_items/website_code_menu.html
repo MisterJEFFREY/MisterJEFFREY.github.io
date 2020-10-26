@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>JC_PROTO_WEBSITE:From Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/small-business.css" rel="stylesheet">
+</head>
+	<script>
+	
+		<!--Work around attempt #5 to prevent Chrome's inconsistent iframe content rendering.-->
+		function test_hidden_fix()
+		{
+			//https://www.geeksforgeeks.org/how-to-detect-the-user-browser-safari-chrome-ie-firefox-and-opera-using-javascript/
+			//Detect if using computer chrome!
+			// Get the user-agent string 
+			let userAgentString = navigator.userAgent;
+			// Detect Chrome 
+            let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+				//alert("User is using computer chrome: " + chromeAgent); //console.log("User is using computer chrome: " + chromeAgent);
+				//If user is really using Computer Chrome....
+				if (chromeAgent == true)
+					{
+						window.location.visibility = "hidden";
+						window.location.visibility = "visible";
+					}
+					//window.location.visibility = "hidden";
+					//window.location.visibility = "visible";
+					//I think this is working as intended since I don't see iframe being invisible after testing so many times.
+					//Crossing fingers this stays this way. 9/11/20 -> Updated: 9/29/20
+					parent.postMessage("child frame", "*");
+		}
+	</script>
+	
+<body style="background-color:#BFBFBF;" onload="test_hidden_fix();">
+
+	<!--ERROR NOTICED: [9/11/20] Chrome loads iframe content, but sometimes the graphics don't show up for some odd reason.
+	The content is there and the functionality works, but when it's accidentally invisible, it'll only appear when window is resized.
+	See function above-->
+  <!-- Page Content -->
+  <div class="container">
+
+		<!---->
+      <div class="col-md-12 mb-5">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title text-center">What would you like to see regarding Website code?</h5>
+			<!--style = "color:#000000;"-->
+			<br>
+			<p>See how this portfolio site communicate through different web pages with each other!</p>
+			<a href="specific_coding_sections_items/website_code_snippet_1.html" class="btn btn-success btn-sm m-2 mb-4" style = "color:#000000;" ><b>Cross Origin Communications</b></a><br>
+			
+			<p class ="mt-3">See how I've worked around Chrome's Iframe rendering <span style = "color:#C31400;">BUG!</span> <br><b>[CHROME VERSION:85.0.4183.10]</b></p>
+			<a href="specific_coding_sections_items/website_code_snippet_2.html" class="btn btn-success btn-sm m-2 mb-4" style = "color:#000000;" ><b>Chrome Iframe Rendering Fix</b></a><br>
+			<!-- <p class ="mt-3">See how this portfolio site was designed as you see now!</p> -->
+			<!-- <a href="specific_coding_sections_items/website_code_snippet_3.html" class="btn btn-success btn-sm m-2 mb-4" style = "color:#000000;" ><b>Portfolio Site Design Choices</b></a><br> -->
+			
+			<!--<a href="#" class="btn btn-success btn-sm m-2" style = "color:#000000;" ><b>Something Random</b></a>-->
+		  </div>
+          <div class="card-footer text-center">
+			<!--Return Button Just in case-->
+			<a href="coding_menu.html" class="btn btn-danger btn-sm m-2"  style = "color:#000000;" ><b>Go Back to Code Menu</b></a><br>
+			<!---->
+			<a href="#" class="btn btn-success btn-sm m-2" style = "color:#000000;" onclick="random_website_code_choose()"><b>Random Website code</b></a>
+          </div>
+        </div>
+      </div>
+	  <!---->
+
+
+	
+  </div>
+  <!-- /.container -->
+
+  <!---->
+  <!---->
+  <!---->
+  
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!---->
+  	
+	<!--Choose random Website Code page-->
+	<script>
+	function random_website_code_choose(){
+	
+	//Will change when I'll add more pages for this section. 
+	//NOTE: If there's many pages for this sub-menu, then use switch case
+	var temp_choose = Math.floor((Math.random() * 2) + 1);
+		if (temp_choose == 1)
+			{window.location.href="specific_coding_sections_items/website_code_snippet_1.html";}
+		if (temp_choose == 2)
+			{window.location.href="specific_coding_sections_items/website_code_snippet_2.html"}
+	
+	}
+	</script>
+
+	
+<!---->
+<!---->
+<!---->
+  
+</body>
+
+</html>

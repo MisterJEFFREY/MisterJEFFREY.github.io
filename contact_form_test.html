@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+		<!--https://stackoverflow.com/questions/3842614/how-do-i-call-a-javascript-function-on-page-load-->
+		<script type="text/javascript">
+				function codeAddress() {
+					alert('ok');
+				}
+				window.onload = codeAddress;
+		</script>
+		
+	<!-- This script requires jQuery and jquery-form plugin
+	You can use these ones from Cloudflare CDN: -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload= "console.log('page is fully loaded')">
+
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSeuXYvsEt8Kx-NWJ6SYSQQ35PGS3j0L-YvWB_PTY2Xy1QaXMg/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+    <fieldset>
+        <h2>Contact The Jeff<br><small></small></h2>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1853799674" -->
+    <fieldset>
+        <legend for="1853799674">Name:</legend>
+        <div class="form-group">
+            <input id="1535074244" type="text" name="entry.1535074244" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "393217484" -->
+    <fieldset>
+        <legend for="393217484">Email:</legend>
+        <div class="form-group">
+            <input id="126409047" type="text" name="entry.126409047" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "checkboxes" id: "1579405966" -->
+    <fieldset>
+        <legend for="1579405966">Subject:</legend>
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.784052716" value="Casual Conversation(s)" >
+                    Casual Conversation(s)
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.784052716" value="Employment Material(s)" >
+                    Employment Material(s)
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.784052716" value="Bounty Submission(s)" >
+                    Bounty Submission(s)
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.784052716" value="Feedback(s)" >
+                    Feedback(s)
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.784052716" value="Donations(s)" >
+                    Donations(s)
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="entry.784052716" value="__other_option__" >
+                </label>
+                <input type="text" name="entry.784052716.other_option_response" placeholder="custom value">
+            </div>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "1080509416" -->
+    <fieldset>
+        <legend for="1080509416">Message:</legend>
+        <div class="form-group">
+            <textarea id="1726805860" name="entry.1726805860" class="form-control" required></textarea>
+        </div>
+    </fieldset>
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="-1320961054693313420">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+
+<script>
+function test_remove(){
+	//alert("test remove function has ended");
+	var check_box = document.getElementsByName("entry.784052716")
+	console.log(check_box);
+	//check_box.removeAttribute('required');
+	<!-- document.getElementByNames('entry.784052716').required = false; -->
+	alert("test remove function has ended");
+<!-- document.getElementsByTagName("H1")[0].removeAttribute("required"); 
+<!-- document.getElementById("city").required = false; --> -->
+
+}
+window.onload = test_remove;
+</script>
+
+<script>
+		window.addEventListener('load', (event) => {
+			console.log('page is fully loaded');
+});
+</script>
+
+<script>
+$('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            alert('Form Submitted. Thanks.')
+            // You can also redirect the user to a custom thank-you page:
+            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        }
+    })
+})
+</script>
+
+</body>
+</html>

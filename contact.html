@@ -16,12 +16,15 @@
   <!-- Custom styles for this template -->
   <link href="css/small-business.css" rel="stylesheet">
   
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   
 </head>
 
 	<!--Please remove the scroll bars!!-->
 
-<body style="background-color:#BFBFBF;" onload="alert('Contact Form is currently bugged and will not only not send out data to me but will fail if the 1st checkbox is merely checked. Please come back later on for an updated Contact Page.')">
+<body style="background-color:#BFBFBF;">
 
 <!-- Navigation -->
   <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color:#215719">-->
@@ -86,6 +89,12 @@
     <div class="card text-white bg-secondary my-5 py-0 text-center">
       <div class="card-body">
         <p class="text-white m-0" >Please use the contact form below for all of your inquires.</p>
+	      		<!--TimeStamp-->
+			<hr style="border: 1px solid grey;">
+			<p class="m-0 p-0" style="font-size:8px;">
+			[Last Updated: 11/06/20 8:59pm]
+			</p>
+			<!--End TimeStamp-->
       </div>
     </div>
 	<!--Iframe content goes here-->
@@ -93,19 +102,13 @@
 <!-- 		<iframe class="iframe_setup" id="iframe_setup_id" onload= "test_check()" src="contact_items\main_contact_page.html" + test_url + width ="100%" height = "100%" style="border:none;"  class="mb-5 pb-5"  ></iframe>
  -->
 	<iframe class="iframe_setup" id="iframe_setup_id" onload="test_check()"  src="contact_items\main_contact_page.html" + test_url + width ="100%" height="100%"  style="border:none;"  class="mb-5 pb-5"  ></iframe>
-	</div>
-	<!-- /.row -->
-	
-	<!---->
-	<!---->
-
-	
+	  </div>
   </div>
-  <!-- /.container -->
 
-  <!---->
-  <!---->
-  <!---->
+
+  <!--------------------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------------------------------------------------------------------------------->
+  <!--------------------------------------------------------------------------------------------------------------------->
   <!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer -->
   <!-- footer class="py-5 bg-dark" style="background-color:#132F0F" > -->
   <footer class="py-2" style="background-color:#132F0F" >
@@ -121,40 +124,11 @@
     <!-- /.container -->
   </footer>
   <!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer --><!-- Footer -->
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!--TESTING-->
-	<script>
-	//var thisURL = window.location.href;
-	//console.log(thisURL);
-	
-	<!-- var thisURL2 = window.top.location; -->
-	<!-- console.log(thisURL2); -->
-	
-	</script>
-	
-	<!--NO LONGER NEEDED!-->
-	<!--Okay, this works so far. Can I access iframe element from parent?-->
-<!-- 	<script>
-	if (window.location.href.indexOf("?data=bounty_check") > -1) {
-     alert("found it");
-	 }
-	 </script> -->
-	 <!-- document.getElementById('iframe_setup_id').contentWindow.document.getElementById('#bounty_check').checked = true; -->
-	<!-- $('#bounty_check').attr('checked', true); -->
-	
-<!-- 	window.frames['iframe_setup_id'].contentDocument.getElementById('bounty_check'); -->
-	
-
-	
+<!--------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------->
 	<script>
 	function test_check(){
-		//file:///C:/Users/Old_Mstr/Documents/for_testing_with_webpages/prototype_website_bootstrap/startbootstrap-small-business-gh-pages/contact.html?data=bountyzv1
-		//^Original 'url' to edit above!
-		
 		<!--Assign the current url to variable-->
 		var assign_to_pass = window.location.href;
 		//console.log(assign_to_pass);
@@ -166,52 +140,38 @@
 	}
 	</script>
 	
-	<!--DELETE TURTLE-->
-	<script>
-		//Delete the next lines as no longer needed anymore for now.
-		<!--If check contains bounty-->
-		<!-- if (window.location.href.indexOf("?data=bounty") > -1)  -->
-		<!-- { -->
-			<!--If check contains bounty for zombieville bounty 1>
-			<!-- if (window.location.href.indexOf("?data=bountyzb1") > -1) -->
-				<!-- { -->
-					<!-- document.getElementById('iframe_setup_id').contentWindow.postMessage('bountyzb1','*'); -->
-				<!-- } -->
-		<!-- document.getElementById('iframe_setup_id').contentWindow.postMessage('foo','*'); -->
-		
-		<!-- } -->
-	</script>
 	
-	<!--No longer needed now-->
-	<!-- document.getElementById('iframe_setup_id').contentWindow.document.getElementById('#bounty_check').checked = true; -->
-	<!-- document.getElementById('iframe_setup_id').contentWindow.check_bounty(); -->
-	<!-- window.frames['iframe_setup_id'].check_bounty(); -->
-	<!--Test function onload for iframe-->
-	<script>
-	function check_url() {
+<!--Successful CORS messaging-->
+  <script>
+  //https://stackoverflow.com/questions/13042615/allowing-a-child-iframe-to-call-a-function-on-its-parent-window-from-a-different
+	window.addEventListener("message", function(event) {
+    console.log("Listened to contact form iframe saying: " + event.data);
 	
-	<!-- parent.postMessage("This is a message", "*"); -->
-	}
-	<!-- document.getElementById('iframe_setup_id').contentWindow.document.getElementById('#bounty_check').checked = true; -->
-<!-- 	var o = document.getElementsByID('iframe_setup_id')[0];
-<!-- 	o.contentWindow.postMessage('Hello B'); --> -->
-			<!-- document.getElementById('#bounty_check').checked = true; -->
-			<!-- document.getElementById('iframe_setup_id').contentWindow.document.getElementById('#bounty_check').checked = true; -->
+	var test_data = event.data
+	console.log(test_data);
+	if (test_data.includes("contact_form_iframe"))
+		{
+			//var test = document.getElementById('coding_iframe');
+			//test.scrollIntoView();
+			//alert("Did it work?");
+			setTimeout(function(){
+			var test_1 = document.getElementById('iframe_setup_id').getAttribute('src');
+			console.log(test_1);
+					if ( test_1 != 'contact_items/contact_success.html')
+					{
+						console.log("contact form not contact success")
+						document.getElementById('iframe_setup_id').setAttribute( 'src', '' );
+						document.getElementById('iframe_setup_id').setAttribute( 'src', 'contact_items/contact_success.html' );
+						console.log("contact form IS contact success")
+					}
 			
-		
-	</script>
-	<script> 
-	<!--https://stackoverflow.com/questions/51114177/iframes-document-is-null-even-though-its-contentwindow-isnt-->
-<!-- 	var iframe = document.getElementById('iframe_setup_id');
-<!-- 	iframe.onload = function() {
-</script>
-
-<!--Test postmessage turtle-->
-<!--https://javascript.info/cross-window-communication#:~:text=allow%2Dsame%2Dorigin,all%20implied%20restrictions%20for%20scripts.-->
-<script>
-
-
-</script>
+			},250); //.2			.250 second(s) delay
+		} 
+	});
+	</script> 
+	
+	<!--Test postmessage turtle-->
+	<!--https://javascript.info/cross-window-communication#:~:text=allow%2Dsame%2Dorigin,all%20implied%20restrictions%20for%20scripts.-->
   
 </body>
 

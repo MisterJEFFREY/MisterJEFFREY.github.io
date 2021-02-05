@@ -213,6 +213,11 @@
 						////Submit the YT VID number reference right inside the textbox!
 						check_data = check_data.substr(check_data.lastIndexOf("e")+1);
 						document.getElementById("1726805860").value += "Well, hello there, Jeff!\n\nI stumbled by your YouTube Video #" + check_data + " and I have the following thoughts.\n\n[INSERT YOUR REASON(S) TO THIS MESSAGE.]\n\nI look forward from hearing from you!\n";
+					///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					//Now I've added donation links to my site in case if any strangers would like to donate a couple of $ 2/5/21
+					}else if(check_data.includes("donations")){
+					document.getElementById("d_c").checked = true;
+					document.getElementById("1726805860").value += "Salutations, Jeff!\n\nI have some [INSERT TYPE OF MESSAGE, I.E. CONCERNS, QUESTIONS] regarding donations to you.\n\nI wanted to know [INSERT YOUR MESSAGE]\n\nI hope to hear from you soon!";
 					}
 					///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					//Out of scope from selections. Logged to console here just in case, but user will not see this conventionally.
